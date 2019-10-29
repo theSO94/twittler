@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery.js"></script>
+    <script src="data_generator.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+
+    <div class="tweet">
+      <div id="t1">
+         @shawndrost
+      </div>
+      <div id="t2">
+        nearly automated a future #burningman
+      </div>
+      <div id="t3">
+        Tue Oct 29 2019 14:49:53 
+      </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+
+        var $body = $('body');
+        $body.html('');
+
+        var index = streams.home.length - 1;
+        
+        while(index >= 0){
+          var tweet = streams.home[index];
+          var $tweet = $('<div></div>');
+          var t1 = $('<div></div>');
+          var t2 = $('<div></div>');
+          var t3 = $('<div></div>');
+          $tweet.addClass('center');
+          $tweet.addClass('tweet');
+
+          t1.attr('id', 't1');
+          t2.attr('id', 't2')
+          t3.attr('id', 't3')
+
+          var $userc = $('<a></a>');
+          $userc.text(tweet.user);
+          $userc.attr('href', `#${index}`)
+          t1.html('@'  + $userc[0].outerHTML);
+          t2.text(tweet.message);
+          t3.text(tweet.created_at);
+
+          t2.addClass('center');
+          t1.appendTo($tweet);
+          t2.appendTo($tweet);
+          t3.appendTo($tweet);
+          console.log($tweet);
+
+          // $tweet.html( t1[0].outerText + ': ' + t2[0].outerText + ' ' + tweet.created_at);
+          $tweet.appendTo($body);
+
+          index -= 1;
+        }
+      setInterval(function(){
+        $('div')[0].remove();
+      }, 2550);
+      setInterval(  function(){
+          var index = streams.home.length - 1;
+          var tweet = streams.home[index];
+          var $tweet = $('<div></div>');
+          var t1 = $('<div></div>');
+          var t2 = $('<div></div>');
+          var t3 = $('<div></div>');
+          $tweet.addClass('center');
+          $tweet.addClass('tweet');
+
+          t1.attr('id', 't1');
+          t2.attr('id', 't2')
+          t3.attr('id', 't3')
+
+          var $userc = $('<a></a>');
+          $userc.text(tweet.user);
+          $userc.attr('href', `#${index}`)
+          t1.html('@'  + $userc[0].outerHTML);
+          t2.text(tweet.message);
+          t3.text(tweet.created_at);
+
+          t2.addClass('center');
+          t1.appendTo($tweet);
+          t2.appendTo($tweet);
+          t3.appendTo($tweet);
+          console.log($tweet);
+
+          // $tweet.html( t1[0].outerText + ': ' + t2[0].outerText + ' ' + tweet.created_at);
+          $tweet.appendTo($body);
+
+      }, 2550);
+      });
+
+    </script>
+  </body>
+</html>
