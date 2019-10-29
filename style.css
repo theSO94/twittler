@@ -1,0 +1,31 @@
+.center{
+	padding-top: 20px;
+	margin: auto;
+ 	width: 60%;
+  	padding: 12px;
+}
+.tweet {
+	background-color: #ABD1DB;
+	margin: 10px;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 25px;
+	padding-right: 5px;
+	width: 50%;
+	float: center;
+}
+#t1 {
+	float: left;
+	padding-right: 35px;
+}
+#t2 {
+  	border: 2px solid green;
+}
+#t3 {
+	float: right;
+	padding-top: 3px;
+}
+
+body {
+	background-color: #B9E7EE;
+}
